@@ -1,5 +1,5 @@
 from subprocess import check_output, call
-from json import dumps, loads
+from json import dumps
 from sys import stdout
 from os import environ
 
@@ -10,14 +10,17 @@ LOOKUP_WARNING = "Error: Could not find SwitchAudioSource"
 
 class AudioSource:
     def __init__(self, description, active):
-        audioSourceJSON = loads(description)
-        title = audioSourceJSON["name"]
-        self.uid = audioSourceJSON["uid"]
-        self.arg = audioSourceJSON["id"]
-        self.title = title
-        self.autocomplete = title
-        self.type = audioSourceJSON["type"]
+        words = description.split(',')
+        output = words[1]
+        title = words[0]
 
+        self.uid = title
+        self.title = title
+        self.arg = title
+        self.autocomplete = title
+
+        self.output = output.find('output') > -1
+        self.input = not self.output
         self.icon = {"path": "icons/active.png" if active ==
                      title else "icons/inactive.png"}
 
@@ -28,11 +31,11 @@ class AudioSource:
 def get_sources():
     active = check_output([
         PATH_TO_SWITCH_AUDIO_OUTPUT, '-c'
-    ]).strip()
+    ]).strip().decode('UTF-8')
 
     command_output = check_output([
-        PATH_TO_SWITCH_AUDIO_OUTPUT, '-a', '-t', 'output', '-f', 'json'
-    ])
+        PATH_TO_SWITCH_AUDIO_OUTPUT, '-a', '-t', 'output', '-f', 'cli'
+    ]).decode('UTF-8')
 
     return map(lambda line: AudioSource(line, active), command_output.splitlines())
 
@@ -46,7 +49,7 @@ def get_current():
 
 def set_output(device):
     check_output([
-        PATH_TO_SWITCH_AUDIO_OUTPUT, '-i', device
+        PATH_TO_SWITCH_AUDIO_OUTPUT, '-s', device
     ])
     stdout.write(device)
 
