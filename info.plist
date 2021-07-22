@@ -38,7 +38,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>55E5F39C-074E-44D4-A590-B8388F3005B2</string>
+				<string>ED6B7E79-8B79-4DE6-9BCD-8D7BE2EDA3AF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -357,33 +357,23 @@ sys.stdout.write(str(get_sources()))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>0</integer>
-				<key>focusedappvariable</key>
-				<false/>
-				<key>focusedappvariablename</key>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>toggle audio output</string>
+				<key>subtext</key>
 				<string></string>
-				<key>hotkey</key>
-				<integer>0</integer>
-				<key>hotmod</key>
-				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
-				<key>leftcursor</key>
+				<key>text</key>
+				<string>Toggle last audio output</string>
+				<key>withspace</key>
 				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>3C0FE678-9CDF-4E1F-AD87-D5E4CACDCDA5</string>
+			<string>01C1D384-588A-4E64-B466-664C0D6ADE55</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -429,23 +419,35 @@ sys.stdout.write(str(get_sources()))</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>toggle audio output</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>Toggle last audio output</string>
-				<key>withspace</key>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>3</integer>
+				<key>argumenttext</key>
+				<string>向的AirPods Max</string>
+				<key>focusedappvariable</key>
 				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>34</integer>
+				<key>hotmod</key>
+				<integer>1966080</integer>
+				<key>hotstring</key>
+				<string>I</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>01C1D384-588A-4E64-B466-664C0D6ADE55</string>
+			<string>3C0FE678-9CDF-4E1F-AD87-D5E4CACDCDA5</string>
 			<key>version</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -467,9 +469,9 @@ Once installed, make sure that the "Environment Variable" that points to the exe
 			<key>note</key>
 			<string>Keyword for toggle last audio output</string>
 			<key>xpos</key>
-			<integer>20</integer>
+			<integer>25</integer>
 			<key>ypos</key>
-			<integer>375</integer>
+			<integer>210</integer>
 		</dict>
 		<key>2ACBC07C-367B-45D2-AAAF-0BF58336AD2E</key>
 		<dict>
@@ -485,9 +487,9 @@ Once installed, make sure that the "Environment Variable" that points to the exe
 			<key>note</key>
 			<string>Toggle last output</string>
 			<key>xpos</key>
-			<integer>20</integer>
+			<integer>445</integer>
 			<key>ypos</key>
-			<integer>225</integer>
+			<integer>330</integer>
 		</dict>
 		<key>55E5F39C-074E-44D4-A590-B8388F3005B2</key>
 		<dict>
@@ -567,13 +569,12 @@ Once installed, make sure that the "Environment Variable" that points to the exe
 	<key>variables</key>
 	<dict>
 		<key>LAST_OUTPUT</key>
-		<string>Yeti Stereo Microphone</string>
+		<string>MacBook Pro扬声器</string>
 		<key>SWITCH_AUDIO_SOURCE_PATH</key>
 		<string>/usr/local/bin/SwitchAudioSource</string>
 	</dict>
 	<key>variablesdontexport</key>
 	<array>
-		<string>LAST_OUTPUT</string>
 		<string>SWITCH_AUDIO_SOURCE_PATH</string>
 	</array>
 	<key>version</key>
